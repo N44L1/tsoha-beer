@@ -1,0 +1,11 @@
+Search Results
+<br>
+Found {{ count }} beers
+<br>
+<hr>
+{% for beer in beers %}
+    <a href="/beer/{{ beer[0] }}">{{ beer[1] }}</a>
+    <hr>
+{% endfor %}
+
+<a href="/beers">Return</a>
