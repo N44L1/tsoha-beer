@@ -13,18 +13,21 @@ CREATE TABLE Beers (
 CREATE TABLE Reviews (
     ReviewID SERIAL PRIMARY KEY,
     BeerID INT REFERENCES Beers(BeerID) ON DELETE CASCADE, 
-    UserID INT REFERENCES Users(UserID) ON DELETE CASCADE, 
+    Username TEXT REFERENCES Users(Username) ON DELETE CASCADE, 
     Rating INT CHECK (Rating >= 1 AND Rating <= 10)
 );
 
-CREATE TABLE Interactions (
-    InteractionID SERIAL PRIMARY KEY,
-    ReviewID INT REFERENCES Reviews(ReviewID) ON DELETE CASCADE, 
-    UserID INT REFERENCES Users(UserID) ON DELETE CASCADE, 
-    ReactionType TEXT 
+CREATE TABLE Comments (
+    CommentID SERIAL PRIMARY KEY,
+    BeerID INT REFERENCES Beers(BeerID) ON DELETE CASCADE, 
+    Username TEXT REFERENCES Users(Username) ON DELETE CASCADE, 
+    Comment TEXT 
 );
 
-CREATE TABLE Admins (
-    AdminID SERIAL PRIMARY KEY,
-    AdminUserID INT REFERENCES Users(UserID) ON DELETE CASCADE 
+CREATE TABLE Locations (
+    LocationID SERIAL PRIMARY KEY,
+    BeerID INT REFERENCES Beers(BeerID) ON DELETE CASCADE, 
+    Username TEXT REFERENCES Users(Username) ON DELETE CASCADE, 
+    Location TEXT,
+    Price FLOAT
 );
