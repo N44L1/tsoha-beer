@@ -62,4 +62,16 @@ def beer(beer_id):
         else:
             added_by_user = "Unknown"
         average_rating = get_average_rating(beer_id)
-        return render_template("beer.html", beer_id=beer_id, beer_name=beer_name, added_by_user=added_by_user, average_rating=average_rating)
+    # Code that allows the comments on the beer to show on beers page
+        sql_comments = "SELECT username, comment FROM Comments WHERE BeerID = :beer_id"
+        result_comments = db.session.execute(text(sql_comments), {"beer_id": beer_id})
+        comments = result_comments.fetchall()
+    # Code that allows the locations and prices of the beer to show on the page
+        sql_locations = "SELECT username, location, price FROM Locations WHERE BeerID = :beer_id"
+        result_locations = db.session.execute(text(sql_locations), {"beer_id": beer_id})
+        locations = result_locations.fetchall()
+
+
+        return render_template("beer.html", beer_id=beer_id, beer_name=beer_name, added_by_user=added_by_user, average_rating=average_rating, comments=comments, locations=locations)
+
+
