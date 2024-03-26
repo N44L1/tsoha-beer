@@ -2,6 +2,9 @@ from app import app
 from flask import redirect, render_template, request, session
 from db import db
 from sqlalchemy.sql import text
+from location import location_beer
+from review import review_beer
+from comments import comment_beer
 
 #This function will be used later but as reviews are not complete now it is here because it is called to return None on a page
 def get_average_rating(beer_id):
