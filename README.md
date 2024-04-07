@@ -28,7 +28,7 @@ Usage instructions:
     - psql < schema.sql
 - Run the application with
     - flask run
-You will find the application on localhost:5000 in your browser
+- You will find the application on localhost:5000 in your browser
 
 
 
