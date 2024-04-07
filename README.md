@@ -14,3 +14,21 @@ Current TODO:
 - Work on possibly adding more features if I can come up with some
 - Document the code more in depth and unify the style of code removing redundancy
 - Work on the look and feel of the site as currently it is bare html
+
+Usage instructions:
+- Clone the repository
+- Create a .env file and define the contents of it as follows
+    DATABASE_URL=<location of your database>
+    SECRET_KEY=<your secret key>
+- Next activate the virtual environment and install all necessary python modules with:
+    python3 -m venv venv
+    source venv/bin/activate
+    pip install -r ./requirements.txt
+- Define the schema for the database using the schema in the repo with
+    psql < schema.sql
+- Run the application with
+    flask run
+You will find the application on localhost:5000 in your browser
+
+
+
