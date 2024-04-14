@@ -21,7 +21,7 @@ CREATE TABLE Comments (
     CommentID SERIAL PRIMARY KEY,
     BeerID INT REFERENCES Beers(BeerID) ON DELETE CASCADE, 
     Username TEXT REFERENCES Users(Username) ON DELETE CASCADE, 
-    Comment TEXT 
+    Comment VARCHAR(300)
 );
 
 CREATE TABLE Locations (
