@@ -1,18 +1,30 @@
-<head>Beer list</head>
-<br>
-<a href="/">Return to login screen</a>
-<br>
-Beers currently on record: {{ count }}
-<br>
-<form action="/result" method="GET">
-    Search beers: <input type="text" name="search">
-    <br>
-    <input type="submit" value="Search">
-    </form>
-    
-<hr>
-{% for beer in beers %}
-    <a href="/beer/{{ beer[0] }}">{{ beer[1] }}</a>
-    <hr>
-{% endfor %}
-<a href="/newbeer">Add a new beer</a>
+{% extends 'bootstrap/base.html' %}
+
+{% block title %}Beer List{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <head>Beer list</head>
+            <br>
+            <a href="/">Return to login screen</a>
+            <br>
+            Beers currently on record: {{ count }}
+            <br>
+            <form action="/result" method="GET">
+                Search beers: <input type="text" name="search">
+                <br>
+                <input type="submit" value="Search">
+                </form>
+                
+            <hr>
+            {% for beer in beers %}
+                <a href="/beer/{{ beer[0] }}">{{ beer[1] }}</a>
+                <hr>
+            {% endfor %}
+            <a href="/newbeer">Add a new beer</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

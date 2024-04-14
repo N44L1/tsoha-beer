@@ -1,28 +1,40 @@
-<head>Beer Information</head>
-<br>
-<a href="/beers">Return to beer database</a>
-<br>
-<h2>Beer Details</h2>
-<p>Added by User: {{ added_by_user }}</p>
-<p>Beer Name: {{ beer_name }}</p>
-<p>Average Rating: {{ average_rating }}</p>
+{% extends 'bootstrap/base.html' %}
 
-<h3>Comments:</h3>
-<ul>
-  {% for comment in comments %}
-    <li>{{ comment.username }}: {{ comment.comment }}</li>
-  {% endfor %}
-</ul>
+{% block title %}Beer{% endblock %}
 
-<h3>Sightings and Prices:</h3>
-<ul>
-  {% for location in locations %}
-    <li>{{ location.username }}: {{ location.location }}, {{ location.price }}</li>
-  {% endfor %}
-</ul>
+{% block content %}
+<div class="container">
+  <div class="row justify-content-center">
+      <div class="col-md-8">
+      <head>Beer Information</head>
+      <br>
+      <a href="/beers">Return to beer database</a>
+      <br>
+      <h2>Beer Details</h2>
+      <p>Added by User: {{ added_by_user }}</p>
+      <p>Beer Name: {{ beer_name }}</p>
+      <p>Average Rating: {{ average_rating }}</p>
 
-<a href="/beer/{{ beer_id }}/review"><button>Review this beer</button></a>
-<br>
-<a href="/beer/{{ beer_id }}/comment"><button>Comment on the beer</button></a>
-<br>
-<a href="/beer/{{ beer_id }}/location"><button>Give a location and price for this beer</button></a>
+      <h3>Comments:</h3>
+      <ul>
+        {% for comment in comments %}
+        <li style="word-wrap: break-word;">{{ comment.username }}: {{ comment.comment }}</li>
+        {% endfor %}
+      </ul>
+
+      <h3>Sightings and Prices:</h3>
+      <ul>
+        {% for location in locations %}
+          <li>{{ location.username }}: {{ location.location }}, {{ location.price }}</li>
+        {% endfor %}
+      </ul>
+
+      <a href="/beer/{{ beer_id }}/review"><button>Review this beer</button></a>
+      <br>
+      <a href="/beer/{{ beer_id }}/comment"><button>Comment on the beer</button></a>
+      <br>
+      <a href="/beer/{{ beer_id }}/location"><button>Give a location and price for this beer</button></a>
+    </div>
+  </div>
+</div>      
+{% endblock %}

@@ -1,10 +1,23 @@
-<body>
-<h2>Comment</h2>
-<form method="post">
-<input type="hidden" name="beer_id" value="{{ beer_id }}">
-<label for="comment">Comment:</label><br>
-<textarea id="comment" name="comment" rows="3" cols="50" maxlength="400" required></textarea><br>
-<button type="submit">Submit Comment</button>
-</form>
-</body>
+{% extends 'bootstrap/base.html' %}
 
+{% block title %}Beer List{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <body>
+            <h2>Comment</h2>
+            <form method="post">
+            <input type="hidden" name="beer_id" value="{{ beer_id }}">
+            <div class="form-group">
+                <label for="comment">Comment (max 300 character):</label><br>
+                <textarea class="form-control" id="comment" name="comment" rows="3" maxlength="300" required></textarea>
+            </div>
+            <button type="submit">Submit Comment</button>
+            </form>
+            </body>
+        </div>
+    </div>
+</div>
+{% endblock %}
