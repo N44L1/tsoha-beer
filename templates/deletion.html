@@ -1,8 +1,20 @@
-<h2>User Account Deletion</h2>
-<form action="/deletion" method="post">
-<label for="username">Username:</label>
-<input type="text" id="username" name="username" required>
-<label for="password">Password:</label>
-<input type="password" id="password" name="password" required>
-<input type="submit" value="Delete account">
-</form>
+{% extends 'bootstrap/base.html' %}
+
+{% block title %}Account deletion{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <h2>User Account Deletion</h2>
+            <form action="/deletion" method="post">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <input type="submit" value="Delete account">
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

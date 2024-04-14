@@ -1,7 +1,18 @@
-<form action="/send" method="POST">
-Beer: <br>
-<textarea name="beername" rows="1" cols="40"></textarea>
-<br>
-<input type="submit" value="Lähetä">
-</form>
-    
+{% extends 'bootstrap/base.html' %}
+
+{% block title %}New beer{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <form action="/send" method="POST">
+            Beer: <br>
+            <textarea name="beername" rows="1" cols="40"></textarea>
+            <br>
+            <input type="submit" value="Send">
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}    

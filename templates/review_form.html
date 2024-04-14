@@ -1,12 +1,25 @@
-<head>
-<title>Review Beer</title>
-</head>
-<body>
-<h2>Review Beer</h2>
-<form method="post">
-<input type="hidden" name="beer_id" value="{{ beer_id }}">
-<label for="rating">Rating (1-10):</label>
-<input type="number" id="rating" name="rating" min="1" max="10" required>
-<button type="submit">Submit Review</button>
-</form>
-</body>
+{% extends 'bootstrap/base.html' %}
+
+{% block title %}Review form{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <head>
+            <title>Review Beer</title>
+            </head>
+            <body>
+            <h2>Review Beer</h2>
+            <form method="post">
+            <input type="hidden" name="beer_id" value="{{ beer_id }}">
+            <label for="rating">Rating (1-10):</label>
+            <input type="number" id="rating" name="rating" min="1" max="10" required>
+            <button type="submit">Submit Review</button>
+            </form>
+            </body>
+        </div>
+    </div>
+</div>
+{% endblock %}
+

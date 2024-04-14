@@ -1,13 +1,24 @@
-<body>
-    <h2>Location and Price</h2>
-    <form method="post">
-    <input type="hidden" name="beer_id" value="{{ beer_id }}">
-    <label for="location">Location:</label><br>
-    <textarea id="Location" name="location" rows="1" cols="50" maxlength="100" required></textarea><br>
-    <label for="price">Price: (Please give the price in the form of euros.cents)</label>
-    <input type="float" id="price" name="price" required>
-    <button type="submit">Submit Location and Price</button>
-    </form>
-    </body>
-    
+{% extends 'bootstrap/base.html' %}
+
+{% block title %}Location form{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <body>
+                <h2>Location and Price</h2>
+                <form method="post">
+                <input type="hidden" name="beer_id" value="{{ beer_id }}">
+                <label for="location">Location:</label><br>
+                <textarea id="Location" name="location" rows="1" cols="50" maxlength="100" required></textarea><br>
+                <label for="price">Price: (Please give the price in the form of euros.cents)</label>
+                <input type="float" id="price" name="price" required>
+                <button type="submit">Submit Location and Price</button>
+                </form>
+            </body>
+        </div>
+    </div>
+</div>
+{% endblock %}    
     

@@ -1,2 +1,14 @@
-<p>Unfortunately this username is already taken</p>
-<a href="/">Return to login screen</a>
+{% extends 'bootstrap/base.html' %}
+
+{% block title %}User taken{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <p>Unfortunately this username is already taken</p>
+            <a href="/">Return to login screen</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

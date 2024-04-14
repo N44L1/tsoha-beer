@@ -1,2 +1,14 @@
-<p>This username does not exist</p>
-<a href="/signup">Create account</a>
+{% extends 'bootstrap/base.html' %}
+
+{% block title %}User not exist{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <p>This username does not exist</p>
+            <a href="/signup">Create account</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

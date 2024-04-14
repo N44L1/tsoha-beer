@@ -1,11 +1,23 @@
-Search Results
-<br>
-Found {{ count }} beers
-<br>
-<hr>
-{% for beer in beers %}
-    <a href="/beer/{{ beer[0] }}">{{ beer[1] }}</a>
-    <hr>
-{% endfor %}
+{% extends 'bootstrap/base.html' %}
 
-<a href="/beers">Return</a>
+{% block title %}Search result{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            Search Results
+            <br>
+            Found {{ count }} beers
+            <br>
+            <hr>
+            {% for beer in beers %}
+                <a href="/beer/{{ beer[0] }}">{{ beer[1] }}</a>
+                <hr>
+            {% endfor %}
+
+            <a href="/beers">Return</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
