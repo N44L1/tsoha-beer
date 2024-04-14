@@ -53,7 +53,7 @@ def signup():
     if user_exists(username):
         return render_template("username_taken.html")
 
-    sql = "INSERT INTO users (username, password, visible) VALUES (:username, :password, 1)"
+    sql = "INSERT INTO users (username, password) VALUES (:username, :password)"
     db.session.execute(text(sql), {"username":username, "password":hash_value})
     db.session.commit()
     return redirect("/creation")
