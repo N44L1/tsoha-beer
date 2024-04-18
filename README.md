@@ -17,6 +17,7 @@ Usage instructions:
   SECRET_KEY=your secret key
   ```
 - Next activate the virtual environment and install all necessary python modules with:
+- Keep in mind the application uses flask_bootstrap for a unified visual style so install it
   ```
   python3 -m venv venv
   source venv/bin/activate
