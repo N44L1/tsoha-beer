@@ -9,6 +9,7 @@
             <body>
             <h2>Comment</h2>
             <form method="post">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
             <input type="hidden" name="beer_id" value="{{ beer_id }}">
             <div class="form-group">
                 <label for="comment">Comment (max 300 character):</label><br>

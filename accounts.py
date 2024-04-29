@@ -1,13 +1,27 @@
 from app import app
-from flask import redirect, render_template, request, session
+from flask import redirect, render_template, request, session, abort
 from werkzeug.security import check_password_hash, generate_password_hash
 from db import db
 from sqlalchemy.sql import text
+import secrets
 
 # When opening the page the user is greeted with a login screen as the website requires an acconut to use it
 @app.route("/")
 def index():
     return render_template("index.html")
+
+# Generate anti csrf token
+def generate_csrf_token():
+    if "csrf_token" not in session:
+        session["csrf_token"] = secrets.token_hex(16)
+    return session["csrf_token"]
+
+# Validate vsrf token
+def validate_csrf_token():
+    token = session.pop("csrf_token", None)
+    if not token or token != request.form.get("csrf_token"):
+        abort(403)
+
 
 @app.route("/login",methods=["POST"])
 def login():

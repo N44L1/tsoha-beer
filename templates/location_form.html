@@ -10,6 +10,7 @@
                 <h2>Location and Price</h2>
                 <form method="post">
                 <input type="hidden" name="beer_id" value="{{ beer_id }}">
+                <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
                 <label for="location">Location:</label><br>
                 <textarea id="Location" name="location" rows="1" cols="50" maxlength="100" required></textarea><br>
                 <label for="price">Price: (Please give the price in the form of euros.cents)</label>
